@@ -19584,6 +19584,18 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_components_Continent_IndexContinent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Continent/IndexContinent */ "./resources/js/components/Continent/IndexContinent.vue"));
   }
 }, {
+  path: '/continents/create',
+  name: 'CreateContinent',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_Continent_CreateContinent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Continent/CreateContinent */ "./resources/js/components/Continent/CreateContinent.vue"));
+  }
+}, {
+  path: '/continents/:id',
+  name: 'EditContinent',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_Continent_EditContinent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Continent/EditContinent */ "./resources/js/components/Continent/EditContinent.vue"));
+  }
+}, {
   path: '/countries',
   name: 'IndexCountrie',
   component: function component() {
@@ -40928,7 +40940,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Index_vue":1,"resources_js_components_Home_vue":1,"resources_js_components_Test_vue":1,"resources_js_components_Continent_IndexContinent_vue":1,"resources_js_components_Country_IndexCountry_vue":1,"resources_js_components_Province_IndexProvince_vue":1,"resources_js_components_Travel_IndexTravel_vue":1,"resources_js_components_User_IndexUser_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Index_vue":1,"resources_js_components_Home_vue":1,"resources_js_components_Test_vue":1,"resources_js_components_Continent_IndexContinent_vue":1,"resources_js_components_Continent_CreateContinent_vue":1,"resources_js_components_Continent_EditContinent_vue":1,"resources_js_components_Country_IndexCountry_vue":1,"resources_js_components_Province_IndexProvince_vue":1,"resources_js_components_Travel_IndexTravel_vue":1,"resources_js_components_User_IndexUser_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

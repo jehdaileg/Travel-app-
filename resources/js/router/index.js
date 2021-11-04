@@ -35,6 +35,20 @@ const routes = [
     },
 
     {
+        path: '/continents/create',
+        name: 'CreateContinent',
+        component: () => import("../components/Continent/CreateContinent")
+
+    },
+
+    {
+       path: '/continents/:id',
+       name: 'EditContinent',
+       component: () => import("../components/Continent/EditContinent")
+
+    },
+
+    {
         path: '/countries',
         name: 'IndexCountrie',
         component: () => import("../components/Country/IndexCountry")

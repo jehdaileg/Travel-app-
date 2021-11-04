@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
      // User::factory(10)->create();
 
-     // Continent::factory(5)->create();
+    //  Continent::factory(15)->create();
 
      // Country::factory(10)->create();
 
