@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\CssSelector\Node\FunctionNode;
 use App\Models\Continent;
+use App\Models\Province;
 
 class Country extends Model
 {

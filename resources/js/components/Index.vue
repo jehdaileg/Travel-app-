@@ -37,7 +37,7 @@
 
                               <router-link to="/provinces" class="p-2 lg:px-4 md:mx-2 text-gray-800 rounded hover:bg-gray-400 hover:text-gray-700 transition-colors duration-300">Province</router-link>
 
-                               <router-link to="/travels" class="p-2 lg:px-4 md:mx-2 text-gray-800 rounded hover:bg-gray-400 hover:text-gray-700 transition-colors duration-300">Travel</router-link>
+                               <router-link to="/moves" class="p-2 lg:px-4 md:mx-2 text-gray-800 rounded hover:bg-gray-400 hover:text-gray-700 transition-colors duration-300">Move</router-link>
 
                                 <router-link to="/users" class="p-2 lg:px-4 md:mx-2 text-gray-800 rounded hover:bg-gray-400 hover:text-gray-700 transition-colors duration-300">Users</router-link>
 

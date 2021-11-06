@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\ContinentController;
 use App\Http\Controllers\API\CountryController;
+use App\Http\Controllers\API\ProvinceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,4 +39,20 @@ Route::apiResource('/countries', CountryController::class);
 Route::get('/countries', [CountryController::class, 'index']);
 Route::post('/countries', [CountryController::class, 'store']);
 Route::delete('/countries/{country}', [CountryController::class, 'destroy']); */
+
+//Provinces 
+
+Route::apiResource('/provinces', ProvinceController::class);
+
+/*
+
+Route::get('/provinces', [ProvinceController::class, 'index']);
+Route::delete('/provinces/{province}', [ProvinceController::class, 'destroy']);
+Route::post('/provinces', [ProvinceController::class, 'store']);
+
+
+
+*/
+
+//Moves (about Travels)
 

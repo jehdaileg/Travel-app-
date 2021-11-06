@@ -75,9 +75,24 @@ const routes = [
     },
 
     {
-        path: '/travels',
-        name: 'IndexTravel',
-        component: () => import("../components/Travel/IndexTravel")
+        path: '/provinces/create',
+        name: 'CreateProvince',
+        component: () => import("../components/Province/CreateProvince")
+
+    },
+
+    {
+
+        path: '/provinces/:id',
+        name: 'EditProvince',
+        component: () => import("../components/Province/EditProvince")
+    },
+
+
+    {
+        path: '/moves',
+        name: 'IndexMove',
+        component: () => import("../components/Move/IndexMove")
     },
 
     {

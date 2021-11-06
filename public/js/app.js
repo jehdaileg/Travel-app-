@@ -19620,10 +19620,22 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_components_Province_IndexProvince_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Province/IndexProvince */ "./resources/js/components/Province/IndexProvince.vue"));
   }
 }, {
-  path: '/travels',
-  name: 'IndexTravel',
+  path: '/provinces/create',
+  name: 'CreateProvince',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_components_Travel_IndexTravel_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Travel/IndexTravel */ "./resources/js/components/Travel/IndexTravel.vue"));
+    return __webpack_require__.e(/*! import() */ "resources_js_components_Province_CreateProvince_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Province/CreateProvince */ "./resources/js/components/Province/CreateProvince.vue"));
+  }
+}, {
+  path: '/provinces/:id',
+  name: 'EditProvince',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_Province_EditProvince_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Province/EditProvince */ "./resources/js/components/Province/EditProvince.vue"));
+  }
+}, {
+  path: '/moves',
+  name: 'IndexMove',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_Move_IndexMove_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Move/IndexMove */ "./resources/js/components/Move/IndexMove.vue"));
   }
 }, {
   path: '/users',
@@ -40952,7 +40964,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Index_vue":1,"resources_js_components_Home_vue":1,"resources_js_components_Test_vue":1,"resources_js_components_Continent_IndexContinent_vue":1,"resources_js_components_Continent_CreateContinent_vue":1,"resources_js_components_Continent_EditContinent_vue":1,"resources_js_components_Country_IndexCountry_vue":1,"resources_js_components_Country_CreateCountry_vue":1,"resources_js_components_Country_EditCountry_vue":1,"resources_js_components_Province_IndexProvince_vue":1,"resources_js_components_Travel_IndexTravel_vue":1,"resources_js_components_User_IndexUser_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Index_vue":1,"resources_js_components_Home_vue":1,"resources_js_components_Test_vue":1,"resources_js_components_Continent_IndexContinent_vue":1,"resources_js_components_Continent_CreateContinent_vue":1,"resources_js_components_Continent_EditContinent_vue":1,"resources_js_components_Country_IndexCountry_vue":1,"resources_js_components_Country_CreateCountry_vue":1,"resources_js_components_Country_EditCountry_vue":1,"resources_js_components_Province_IndexProvince_vue":1,"resources_js_components_Province_CreateProvince_vue":1,"resources_js_components_Province_EditProvince_vue":1,"resources_js_components_Move_IndexMove_vue":1,"resources_js_components_User_IndexUser_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
