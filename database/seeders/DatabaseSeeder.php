@@ -21,17 +21,17 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-       //Role::factory(2)->create();
+       //Role::factory(10)->create();
 
-     // User::factory(10)->create();
+      //User::factory(10)->create();
 
-    //  Continent::factory(15)->create();
+      //Continent::factory(10)->create();
 
-     // Country::factory(10)->create();
+      Country::factory(10)->create();
 
-     //Province::factory(5)->create();
+     //Province::factory(10)->create();
 
-    // Move::factory(10)->create();
+     //Move::factory(10)->create();
 
 
 

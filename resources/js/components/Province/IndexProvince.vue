@@ -3,9 +3,10 @@
 
         <section><Header /></section>
 
-        <section class="main_content">
-            Provinces Section
-        </section>
+
+            
+
+     
 
         <section><Footer /></section>
 

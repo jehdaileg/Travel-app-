@@ -55,6 +55,20 @@ const routes = [
     },
 
     {
+        path: '/countries/create',
+        name: 'CreateCountry',
+        component: () => import("../components/Country/CreateCountry")
+
+    },
+
+    {
+        path: '/countries/:id',
+        name: 'EditCountry',
+        component: () => import("../components/Country/EditCountry")
+
+    },
+
+    {
         path: '/provinces',
         name: 'IndexProvince',
         component: () => import("../components/Province/IndexProvince")
