@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Models\Continent;
+use App\Models\Country;
+use App\Models\Province;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 

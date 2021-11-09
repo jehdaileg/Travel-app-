@@ -3,8 +3,11 @@
 use App\Http\Controllers\API\ContinentController;
 use App\Http\Controllers\API\CountryController;
 use App\Http\Controllers\API\ProvinceController;
+use App\Http\Controllers\API\MoveController;
+use App\Http\Controllers\API\DATAS\MoveDataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Continent;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,4 +58,12 @@ Route::post('/provinces', [ProvinceController::class, 'store']);
 */
 
 //Moves (about Travels)
+
+Route::get('/moves/get-continents', [MoveDataController::class, 'continents']);
+Route::get('/moves/{continent}/get-countries', [MoveDataController::class, 'countries']);
+Route::get('/moves/{country}/get-provinces', [MoveDataController::class, 'provinces']);
+
+Route::apiResource('/moves', MoveController::class);
+
+
 

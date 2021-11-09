@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\CssSelector\Node\FunctionNode;
 use App\Models\Continent;
 use App\Models\Province;
+use App\Models\Move;
 
 class Country extends Model
 {

@@ -96,6 +96,20 @@ const routes = [
     },
 
     {
+        path: '/moves/create',
+        name: 'CreateMove',
+        component: () => import("../components/Move/CreateMove")
+
+    },
+
+    {
+        path: '/moves/:id',
+        name: 'EditMove',
+        component: () => import("../components/Move/EditMove")
+
+    },
+
+    {
         path: '/users',
         name: 'IndexUser',
         component: () => import("../components/User/IndexUser")

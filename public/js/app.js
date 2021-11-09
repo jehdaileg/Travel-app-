@@ -19638,6 +19638,18 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_components_Move_IndexMove_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Move/IndexMove */ "./resources/js/components/Move/IndexMove.vue"));
   }
 }, {
+  path: '/moves/create',
+  name: 'CreateMove',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_Move_CreateMove_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Move/CreateMove */ "./resources/js/components/Move/CreateMove.vue"));
+  }
+}, {
+  path: '/moves/:id',
+  name: 'EditMove',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_Move_EditMove_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/Move/EditMove */ "./resources/js/components/Move/EditMove.vue"));
+  }
+}, {
   path: '/users',
   name: 'IndexUser',
   component: function component() {
@@ -40964,7 +40976,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Index_vue":1,"resources_js_components_Home_vue":1,"resources_js_components_Test_vue":1,"resources_js_components_Continent_IndexContinent_vue":1,"resources_js_components_Continent_CreateContinent_vue":1,"resources_js_components_Continent_EditContinent_vue":1,"resources_js_components_Country_IndexCountry_vue":1,"resources_js_components_Country_CreateCountry_vue":1,"resources_js_components_Country_EditCountry_vue":1,"resources_js_components_Province_IndexProvince_vue":1,"resources_js_components_Province_CreateProvince_vue":1,"resources_js_components_Province_EditProvince_vue":1,"resources_js_components_Move_IndexMove_vue":1,"resources_js_components_User_IndexUser_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Index_vue":1,"resources_js_components_Home_vue":1,"resources_js_components_Test_vue":1,"resources_js_components_Continent_IndexContinent_vue":1,"resources_js_components_Continent_CreateContinent_vue":1,"resources_js_components_Continent_EditContinent_vue":1,"resources_js_components_Country_IndexCountry_vue":1,"resources_js_components_Country_CreateCountry_vue":1,"resources_js_components_Country_EditCountry_vue":1,"resources_js_components_Province_IndexProvince_vue":1,"resources_js_components_Province_CreateProvince_vue":1,"resources_js_components_Province_EditProvince_vue":1,"resources_js_components_Move_IndexMove_vue":1,"resources_js_components_Move_CreateMove_vue":1,"resources_js_components_Move_EditMove_vue":1,"resources_js_components_User_IndexUser_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

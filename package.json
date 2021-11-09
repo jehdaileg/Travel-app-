@@ -18,8 +18,10 @@
         "tailwindcss": "^2.2.19"
     },
     "dependencies": {
+        "moment": "^2.29.1",
         "vue": "^3.2.20",
         "vue-loader": "^16.8.2",
-        "vue-router": "^4.0.12"
+        "vue-router": "^4.0.12",
+        "vuejs-datepicker": "^1.6.2"
     }
 }
