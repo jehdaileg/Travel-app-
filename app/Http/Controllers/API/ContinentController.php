@@ -16,11 +16,17 @@ class ContinentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
 
         $continents = Continent::all();
+
+        if($request->search)
+        {
+            $continents = Continent::where('name', 'like', "%{$request->search}%")->get();
+        }
+
 
         return ContinentResource::collection($continents);
     }

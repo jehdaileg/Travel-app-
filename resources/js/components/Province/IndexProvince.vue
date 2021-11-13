@@ -16,7 +16,32 @@
 
                  <div class="flex flex-col justify-center items-center">
 
-                <router-link to="/provinces/create">Add Province</router-link>
+                <div class="flex justify-between">
+              <router-link to="/provinces/create" class="mr-10 ml-10">Add Province</router-link>
+
+              <div class="flex justify-between">
+                 <form
+                 class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+
+                 <div class="input-group">
+                    <input type="search" v-model="search" class="form-control bg-light border-0 small" placeholder="Search for..."
+                    aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                    <div class="col">
+
+                      <select class="form-control" v-model="countrySelected">
+                       <option v-for="country in countries" :key="country.id" :value="country.id">{{ country.name }}</option>
+                     </select>
+               </div>
+           </div>
+       </form>
+   </div>                       
+
+            </div>
 
 
         <div class="w-full mb-2 flex flex-col justify-center items-center">
@@ -114,6 +139,7 @@
 import Header from "../layouts/Header";
 
 import Footer from "../layouts/Footer";
+
 export default {
 
     components: {
@@ -127,13 +153,32 @@ export default {
 
             provinces: [],
             message_confirm: '',
+            search: '',
+            countrySelected: '',
+            countries: [],
+
 
         }
+    },
+
+    watch: {
+
+        search()
+        {
+            this.getAllProvinces()
+        },
+
+        countrySelected()
+        {
+            this.getAllProvinces()
+        }
+
     },
 
     created()
     {
         this.getAllProvinces()
+        this.getAllCountries()
 
     },
 
@@ -143,7 +188,14 @@ export default {
         {
             axios
 
-               .get('/api/provinces')
+               .get('/api/provinces', {
+
+                    params: {
+
+                        search: this.search,
+                        countrySelected: this.countrySelected
+                    }
+               })
 
                .then(res => {
                 console.log(res.data.data)
@@ -176,6 +228,23 @@ export default {
                })
 
         },
+
+        getAllCountries()
+        {
+            axios
+
+               .get('/api/countries')
+
+               .then(res => {
+
+                this.countries = res.data.data
+
+               })
+
+               .catch(error => {
+                console.log(error)
+               })
+        }
 
 
     },

@@ -17,10 +17,20 @@ class ProvinceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
         $provinces = Province::all();
+
+        if($request->search)
+        {
+            $provinces = Province::where('name', 'like', "%{$request->search}%")->get();
+        }
+
+        else if($request->countrySelected)
+        {
+            $provinces = Province::where('country_id', 'like', "%{$request->countrySelected}%")->get();
+        }
 
         return ProvinceResource::collection($provinces);
 

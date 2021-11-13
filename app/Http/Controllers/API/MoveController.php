@@ -16,9 +16,27 @@ class MoveController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $moves = Move::all();
+
+        if($request->search)
+        {
+            $moves = Move::where('name', 'like', "%{$request->search}%")
+                           ->orWhere('code_move', 'like', "%{$request->search}%")
+                           ->orWhere('description', 'like', "%{$request->search}%")
+                           ->get();
+        }
+        else if($request->countrySelected)
+        {
+            $moves = Move::where('country_id', 'like', "%{$request->countrySelected}%")
+                          ->orWhere('continent_id', 'like', "%{$request->countrySelected}%")
+                          ->orWhere('province_id', 'like', "%{$request->countrySelected}%")
+                          ->get();
+        }
+
+        return MoveResource::collection($moves);
     }
 
     /**
@@ -37,9 +55,14 @@ class MoveController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MoveStoreRequest $request)
     {
         //
+        $move_validated = $request->validated();
+
+        $move_created = Move::create($move_validated);
+
+        return response()->json($move_created);
     }
 
     /**
@@ -51,7 +74,7 @@ class MoveController extends Controller
     public function show(Move $move)
     {
         //
-        return new ProvinceSingleResource($move);
+        return new MoveSingleResource($move);
     }
 
     /**
@@ -72,9 +95,14 @@ class MoveController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MoveStoreRequest $request, Move $move)
     {
         //
+
+        $move = $move->update($request->validated());
+
+        return response()->json(['ele'=> $move, 'message' => 'Updated Successfullys']);
+
     }
 
     /**
@@ -83,8 +111,12 @@ class MoveController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Move $move)
     {
         //
+
+        $move = $move->delete();
+
+        return response()->json(['element'=> $move, 'message' => 'Cleaned Successfully']);
     }
 }

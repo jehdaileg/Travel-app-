@@ -24,7 +24,37 @@
 
                  <div class="flex flex-col justify-center items-center">
 
-                <router-link to="/continents/create">Add continent</router-link>
+                    <div class="flex justify-between">
+                          <router-link to="/continents/create" class="mr-10 ml-10">Add continent</router-link>
+
+                          <div class="flex justify-between">
+
+                             <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+
+                        <div class="input-group">
+                            <input type="search" v-model="search" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-success">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                            <div class="col">
+
+                                  <select v-model="SelectedDepartement" class="form-control">
+                                       <option></option>
+                                  </select>
+
+                            </div>
+                        </div>
+                    </form>
+        
+                          </div>                       
+                        
+                    </div>
+
+              
 
 
         <div class="w-full mb-2 flex flex-col justify-center items-center">
@@ -133,9 +163,19 @@ export default {
 
             continents: [],
             message_confirm: '',
-
+            search: '',
 
         }
+    },
+
+    watch: {
+
+        search()
+        {
+            this.getAllContinents()
+
+        }
+
     },
 
     methods: {
@@ -143,7 +183,13 @@ export default {
         getAllContinents()
         {
             axios
-               .get('/api/continents')
+               .get('/api/continents', {
+
+                params: {
+                    search: this.search 
+                }
+
+               })
 
                .then(res => {
                    console.log(res.data)

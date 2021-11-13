@@ -16,10 +16,26 @@ class CountryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
         $countries = Country::all();
+
+        if($request->search)
+        {
+            $countries = Country::where('name', 'like', "%{$request->search}%")
+                                  ->orWhere('code_country', 'like', "%{$request->search}%")
+                                  ->orWhere('code_phone', 'like', "%{$request->search}%")
+                                  ->get();
+        }
+
+        else if ($request->selectedContinent) {
+            // code...
+
+            $countries = Country::where('continent_id', 'like', "%{$request->selectedContinent}%")
+                                 ->get();
+        }
+
 
         return CountryResource::collection($countries);
     }

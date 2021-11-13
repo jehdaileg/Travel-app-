@@ -98,7 +98,7 @@ const routes = [
     {
         path: '/moves/create',
         name: 'CreateMove',
-        component: () => import("../components/Move/CreateMove")
+        component: () => import("../components/Move/Create")
 
     },
 
